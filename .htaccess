@@ -1,0 +1,102 @@
+# ============================================================
+# GANDIOL DESIGN - OPTIMISATION DE PERFORMANCE
+# Configuration Serveur Apache (.htaccess)
+# ============================================================
+
+# Activer la compression Gzip
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript image/svg+xml
+  AddEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
+</IfModule>
+
+# Contrôle de cache
+<IfModule mod_headers.c>
+  # CSS et JS - Cache court (30 jours)
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # Images - Cache long (1 an)
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Fonts - Cache long (1 an)
+  <FilesMatch "\.(woff|woff2|ttf|eot|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # HTML - Cache court (24 heures)
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+
+  # Ajouter ETag pour validation
+  <FilesMatch "\.(css|js|jpg|jpeg|png|gif|webp)$">
+    Header set ETag "%{TIME_YEAR}%{TIME_MON}%{TIME_MDAY}%{TIME_HOUR}%{TIME_MIN}"
+  </FilesMatch>
+</IfModule>
+
+# Compression des fichiers statiques
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript
+</IfModule>
+
+# Optimisation de la transmission
+<IfModule mod_headers.c>
+  # Priorité au contenu
+  Header set Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Activation du HTTP/2 Push (si disponible)
+<IfModule mod_http2.c>
+  H2PushDiarySize 512
+  H2PushResource /assets/css/style.min.css
+  H2PushResource /assets/vendor/bootstrap/css/bootstrap.min.css
+</IfModule>
+
+# Désactiver la mise en cache pour les API
+<FilesMatch "^(api|forms)/">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </IfModule>
+</FilesMatch>
+
+# Réécriture d'URL pour les fichiers statiques
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Supprimer les www si présent
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+  # HTTPS redirect
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Fichiers statiques
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)$ index.html [L]
+</IfModule>
+
+# Optimisation du serveur
+<IfModule mod_setenvif.c>
+  SetEnvIf Request_URI "\.gif$" image-request
+  SetEnvIf Request_URI "\.jpg$" image-request
+  SetEnvIf Request_URI "\.jpeg$" image-request
+  SetEnvIf Request_URI "\.png$" image-request
+  SetEnvIf Request_URI "\.webp$" image-request
+</IfModule>
+
+# Taille de charge
+LimitRequestBody 10485760
+
+# Timeout
+Timeout 60
