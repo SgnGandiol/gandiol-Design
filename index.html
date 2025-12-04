@@ -33,6 +33,10 @@
     .header { padding: 20px 0; }
     .hero { min-height: 100vh; display: flex; align-items: center; }
     .hero h1 { font-size: 48px; font-weight: 700; }
+    /* Image optimization styles */
+    img { transition: opacity 0.3s ease-in-out; }
+    img[loading="lazy"] { opacity: 0.7; }
+    img.image-loaded { opacity: 1; }
   </style>
 
   <!-- Vendor CSS Files - with preload for critical vendor CSS -->
@@ -185,32 +189,32 @@
           </div>
             <div class="services_portfolios-grid">
                 <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/portfolio_logo_visuel.webp" alt="Design Graphique" loading="lazy" decoding="async">
+                    <img src="assets/img/portfolio/portfolio_logo_visuel.webp" alt="Design Graphique" loading="lazy" decoding="async" width="300" height="240">
                     <h3>Design Graphique</h3>
                     <p>Création d'identités visuelles fortes et impactantes pour votre marque.</p>
                 </div>
                 <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/portfolio_site_web_ecommerce (1).webp" alt="Développement Web" loading="lazy" decoding="async">
+                    <img src="assets/img/portfolio/portfolio_site_web_ecommerce (1).webp" alt="Développement Web" loading="lazy" decoding="async" width="300" height="240">
                     <h3>Développement Web</h3>
                     <p>Conception d'interfaces web modernes et fonctionnelles.</p>
                 </div>
                 <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/image_serigraphie.webp" alt="Sérigraphie" loading="lazy" decoding="async">
+                    <img src="assets/img/portfolio/image_serigraphie.webp" alt="Sérigraphie" loading="lazy" decoding="async" width="300" height="240">
                     <h3>Sérigraphie</h3>
                     <p>Communication visuelle et sérigraphie sur mesure.</p>
                 </div>
                 <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/portfolio_flyers_banners.webp" alt="Flyers & Banners" loading="lazy" decoding="async">
+                    <img src="assets/img/portfolio/portfolio_flyers_banners.webp" alt="Flyers & Banners" loading="lazy" decoding="async" width="300" height="240">
                     <h3>Flyers & Banners</h3>
                     <p>Solutions sur-mesure pour vos supports publicitaires.</p>
                 </div>
                 <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/image_panneau_publicitaire-_1_.webp" alt="Panneaux Publicitaires" loading="lazy" decoding="async">
+                    <img src="assets/img/portfolio/image_panneau_publicitaire-_1_.webp" alt="Panneaux Publicitaires" loading="lazy" decoding="async" width="300" height="240">
                     <h3>Panneaux Publicitaires</h3>
                     <p>Création et installation de panneaux publicitaires impactants.</p>
                 </div>
                 <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/portfolio_carte_visite_badges.webp" alt="Cartes de Visite" loading="lazy" decoding="async">
+                    <img src="assets/img/portfolio/portfolio_carte_visite_badges.webp" alt="Cartes de Visite" loading="lazy" decoding="async" width="300" height="240">
                     <h3>Cartes de Visite et Badges</h3>
                     <p>Packaging personnalisé pour valoriser votre marque.</p>
                 </div>
@@ -662,6 +666,9 @@
   <script defer src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script defer src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script defer src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Image Optimization Script -->
+  <script defer src="assets/js/image-optimizer.js"></script>
 
   <!-- Template Main JS File -->
   <script defer src="assets/js/main.js"></script>
