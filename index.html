@@ -86,7 +86,7 @@
 
 
       <nav id="navbar" class="navbar">
-        <ul>
+        <ul class="stagger-animation">
           <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
           <li><a class="nav-link scrollto" href="#about">À propos</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
@@ -109,33 +109,32 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">🎨 Gandiol Design</h1>
-          <h2 data-aos="fade-up" data-aos-delay="200" class="slogan">
+          <h1 class="hero-title-delayed" style="opacity: 0; transform: translateY(30px);">🎨 <span class="typewriter-text">Gandiol Design</span></h1>
+          <h2 data-aos="slide-right" data-aos-delay="300" data-aos-duration="1200" class="slogan">
             "Transformez votre présence digitale avec des solutions simples et efficaces."
           </h2>
-          <p data-aos="fade-up" data-aos-delay="400">
+          <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
             Agence digitale sénégalaise spécialisée en conception graphique, développement d'applications, marketing digital et photographie. Solutions complètes pour TPE/PME et entrepreneurs.
           </p>
-          <div data-aos="fade-up" data-aos-delay="600">
+          <div data-aos="zoom-in" data-aos-delay="900" data-aos-duration="800">
             <div class="text-center text-lg-start">
               <a href="#about"
-                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center animate-pulse">
                 <span>Découvrir nos services</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
-              <a href="https://wa.me/221785903857" class="whatsapp-btn ms-3">
+              <a href="https://wa.me/221785903857" class="whatsapp-btn ms-3 animate-bounce">
                 <i class="bi bi-whatsapp"></i>
                 <span>Contactez-nous</span>
               </a>
             </div>
           </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="Hero Gandiol Design" loading="lazy" decoding="async">
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1500">
+          <img src="assets/img/hero-img.png" class="img-fluid animated floating-animation" alt="Hero Gandiol Design" loading="eager" decoding="async">
         </div>
       </div>
     </div>
-
 
   </section><!-- End Hero -->
   
@@ -148,7 +147,7 @@
     
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="about scroll-reveal">
 
       <div class="container" data-aos="fade-up">
         <div class="row gx-0">
