@@ -18,31 +18,45 @@
   <link href="assets/img/logo.png" rel="icon" type="image/jpeg">
   <link href="assets/img/logo.png" rel="apple-touch-icon" type="image/jpeg">
 
-  <!-- Google Fonts - with font-display swap for better performance -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap"
-    rel="stylesheet">
+  <!-- Google Fonts - defer loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Critical inline styles - SYSTEM FONTS ONLY -->
+  <style>
+    :root { --primary-color: #1E5128; --secondary-color: #E6A72C; --text-color: #333; --heading-color: #1E5128; }
+    html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; color: #333; }
+    body { opacity: 1; visibility: visible; }
+    * { box-sizing: border-box; }
+    a { color: #E6A72C; text-decoration: none; }
+    h1, h2, h3, h4, h5, h6 { color: #1E5128; font-weight: 700; }
+    section { padding: 60px 0; overflow: hidden; }
+    .header { position: fixed; top: 0; left: 0; right: 0; padding: 15px 0; z-index: 997; background: transparent; }
+    .hero { width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0; }
+    .hero h1 { font-size: 48px; margin: 0 0 20px 0; }
+    .hero h2 { font-size: 24px; margin: 20px 0 0 0; }
+    .container { width: 100%; padding: 0 15px; margin: 0 auto; }
+    @media(min-width:1200px) { .container { max-width: 1140px; } }
+    @media(min-width:992px) { .container { max-width: 960px; } }
+    @media(min-width:768px) { .container { max-width: 720px; } }
+    img { max-width: 100%; height: auto; display: block; }
+  </style>
 
   <!-- Critical CSS inline for faster initial render -->
   <style>
-    /* Critical styles for above-the-fold content */
-    :root {
-      --primary-color: #1E5128;
-      --secondary-color: #E6A72C;
-    }
-    .header { padding: 20px 0; }
-    .hero { min-height: 100vh; display: flex; align-items: center; }
-    .hero h1 { font-size: 48px; font-weight: 700; }
-    /* Image optimization styles */
-    img { transition: opacity 0.3s ease-in-out; }
-    img[loading="lazy"] { opacity: 0.7; }
-    img.image-loaded { opacity: 1; }
+    /* All content must be visible immediately */
+    body { opacity: 1 !important; visibility: visible !important; }
+    h1, h2, h3, h4, h5, h6 { opacity: 1 !important; visibility: visible !important; }
+    p, a, span, div, section, .hero, .header, .navbar { opacity: 1 !important; visibility: visible !important; }
   </style>
 
-  <!-- Vendor CSS Files - with preload for critical vendor CSS -->
+  <!-- Vendor CSS Files - HIGH PRIORITY -->
   <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="assets/css/style.min.css" as="style">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/style.min.css" rel="stylesheet">
   <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   
@@ -53,9 +67,6 @@
   <noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript>
   <link rel="preload" href="assets/vendor/remixicon/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet"></noscript>
-
-  <!-- Template Main CSS File - Minified version for production -->
-  <link href="assets/css/style.min.css" rel="stylesheet">
 
   <!-- Custom Styles -->
 
@@ -668,6 +679,22 @@
 
   <!-- Image Optimization Script -->
   <script defer src="assets/js/image-optimizer.js"></script>
+
+  <!-- Font Swap Script -->
+  <script>
+    // Apply Google Fonts once ready, but keep system fonts visible always
+    if ('fonts' in document) {
+      document.fonts.ready.then(() => {
+        document.body.style.fontFamily = '"Open Sans", system-ui, -apple-system, sans-serif';
+        document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
+          el.style.fontFamily = '"Montserrat", system-ui, -apple-system, sans-serif';
+        });
+      }).catch(() => {
+        // If fonts fail, system fonts are already visible
+        console.log('Google Fonts failed to load');
+      });
+    }
+  </script>
 
   <!-- Template Main JS File -->
   <script defer src="assets/js/main.js"></script>
