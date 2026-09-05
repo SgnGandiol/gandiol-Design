@@ -2717,3 +2717,60 @@ section {
       font-size: 1.3rem;
       margin-right: 10px;
     }
+
+/*--------------------------------------------------------------
+# CSS-only animations (replaces the old JS animation engine)
+--------------------------------------------------------------*/
+@media (prefers-reduced-motion: no-preference) {
+  [data-aos] {
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation-fill-mode: both;
+  }
+  [data-aos="fade-up"]     { animation-name: aosFadeUp; }
+  [data-aos="zoom-in"]     { animation-name: aosZoomIn; }
+  [data-aos="zoom-out"]    { animation-name: aosZoomOut; }
+  [data-aos="slide-right"] { animation-name: aosSlideRight; }
+  [data-aos="flip-left"]   { animation-name: aosFlipLeft; animation-duration: 0.9s; }
+}
+
+@keyframes aosFadeUp     { from { transform: translateY(24px); } to { transform: translateY(0); } }
+@keyframes aosZoomIn     { from { transform: scale(0.92); } to { transform: scale(1); } }
+@keyframes aosZoomOut    { from { transform: scale(1.08); } to { transform: scale(1); } }
+@keyframes aosSlideRight { from { transform: translateX(30px); } to { transform: translateX(0); } }
+@keyframes aosFlipLeft   { from { transform: perspective(600px) rotateY(-20deg); } to { transform: perspective(600px) rotateY(0deg); } }
+
+/* Hero title entrance */
+.hero-title-delayed {
+  animation: heroTitleIn 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+@keyframes heroTitleIn { from { transform: translateY(24px); } to { transform: translateY(0); } }
+
+/* Typewriter effect on "Gandiol Design" - pure CSS, no JS */
+.typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  width: 14ch;
+  border-right: 3px solid var(--secondary-color);
+  animation: typewriterReveal 1.4s steps(14, end) 0.4s both,
+             typewriterBlink 0.8s step-end infinite;
+}
+@keyframes typewriterReveal { from { width: 0; } }
+@keyframes typewriterBlink { 50% { border-color: transparent; } }
+
+/* Floating hero illustration + entrance (replaces the undefined "up-down" JS keyframe) */
+.hero .animated {
+  animation: heroImgFlipIn 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) both,
+             up-down 2.4s ease-in-out 0.9s infinite alternate-reverse;
+}
+@keyframes heroImgFlipIn { from { transform: perspective(600px) rotateY(-20deg) scale(0.92); } to { transform: perspective(600px) rotateY(0deg) scale(1); } }
+@keyframes up-down { 0%, 100% { transform: translateY(-8px); } 50% { transform: translateY(8px); } }
+
+/* Soft pulse / bounce for CTA buttons */
+@keyframes softPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+.animate-pulse { animation: softPulse 2.2s ease-in-out infinite; }
+
+@keyframes softBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.animate-bounce { animation: softBounce 2.2s ease-in-out infinite; }
