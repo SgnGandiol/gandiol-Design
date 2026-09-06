@@ -6,691 +6,449 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="robots" content="index, follow">
 
-  <title>Gandiol Design - Agence Digitale Sénégalaise</title>
+  <title>Gandiol Design - Agence Digitale à Thiès, Sénégal</title>
   <meta
-    content="Agence digitale sénégalaise spécialisée en conception graphique, développement d'applications, marketing digital et photographie. Solutions complètes pour TPE/PME."
+    content="Agence digitale sénégalaise basée à Thiès : conception graphique, développement d'applications, marketing digital et photographie pour TPE/PME et entrepreneurs."
     name="description">
   <meta
-    content="agence digitale sénégal, conception graphique, développement applications, marketing digital, photographie, gandiol design, saint-louis"
+    content="agence digitale sénégal, agence digitale thiès, conception graphique, développement applications, marketing digital, photographie, gandiol design"
     name="keywords">
+  <link rel="canonical" href="https://gandioldesign.com/">
 
-  <!-- Favicons - optimized -->
+  <!-- Open Graph / réseaux sociaux -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_SN">
+  <meta property="og:title" content="Gandiol Design - Agence Digitale à Thiès, Sénégal">
+  <meta property="og:description" content="Identité visuelle, sites web, marketing digital et photographie pour les commerçants, artisans et entrepreneurs sénégalais.">
+  <meta property="og:url" content="https://gandioldesign.com/">
+  <meta property="og:site_name" content="Gandiol Design">
+  <meta property="og:image" content="https://gandioldesign.com/assets/img/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gandiol Design - Agence Digitale à Thiès, Sénégal">
+  <meta name="twitter:description" content="Identité visuelle, sites web, marketing digital et photographie pour les commerçants, artisans et entrepreneurs sénégalais.">
+  <meta name="twitter:image" content="https://gandioldesign.com/assets/img/logo.png">
+
+  <!-- Favicons -->
   <link href="assets/img/logo.png" rel="icon" type="image/jpeg">
   <link href="assets/img/logo.png" rel="apple-touch-icon" type="image/jpeg">
 
-  <!-- Google Fonts - defer loading -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Literata:ital,opsz,wght@0,18..144,400;0,18..144,500;0,18..144,600;0,18..144,700;1,18..144,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Critical inline styles - SYSTEM FONTS ONLY -->
+  <!-- Critical inline styles: tokens + guaranteed visibility, no FOUC -->
   <style>
-    :root { --primary-color: #1E5128; --secondary-color: #E6A72C; --text-color: #333; --heading-color: #1E5128; }
-    html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; color: #333; }
-    body { opacity: 1; visibility: visible; }
+    :root {
+      --ink:#15130E; --ink-soft:#201C15; --ink-line: rgba(243,238,225,0.14);
+      --paper:#F6F1E7; --paper-soft:#ECE4D2; --paper-line: rgba(28,26,19,0.14);
+      --text-dark:#F3EEE1; --muted-dark:#A79E8C;
+      --text-light:#1C1A13; --muted-light:#6B6353;
+      --accent:#E7A93A; --accent-deep:#C6841E; --accent-ink:#1C1305;
+      --forest:#1F5A34;
+      --primary-color:#1F5A34; --secondary-color:#E7A93A;
+    }
+    html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; background:var(--paper); color: var(--text-light); }
     * { box-sizing: border-box; }
-    a { color: #E6A72C; text-decoration: none; }
-    h1, h2, h3, h4, h5, h6 { color: #1E5128; font-weight: 700; }
-    section { padding: 60px 0; overflow: hidden; }
-    .header { position: fixed; top: 0; left: 0; right: 0; padding: 15px 0; z-index: 997; background: transparent; }
-    .hero { width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0; }
-    .hero h1 { font-size: 48px; margin: 0 0 20px 0; }
-    .hero h2 { font-size: 24px; margin: 20px 0 0 0; }
-    .container { width: 100%; padding: 0 15px; margin: 0 auto; }
-    @media(min-width:1200px) { .container { max-width: 1140px; } }
-    @media(min-width:992px) { .container { max-width: 960px; } }
-    @media(min-width:768px) { .container { max-width: 720px; } }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 { color: inherit; font-weight: 700; }
+    section { overflow: hidden; }
     img { max-width: 100%; height: auto; display: block; }
+    body, h1, h2, h3, h4, h5, h6, p, a, span, div, section, .gd-hero, .gd-header, .gd-nav { opacity: 1 !important; visibility: visible !important; }
   </style>
 
-  <!-- Critical CSS inline for faster initial render -->
-  <style>
-    /* All content must be visible immediately */
-    body { opacity: 1 !important; visibility: visible !important; }
-    h1, h2, h3, h4, h5, h6 { opacity: 1 !important; visibility: visible !important; }
-    p, a, span, div, section, .hero, .header, .navbar { opacity: 1 !important; visibility: visible !important; }
-  </style>
-
-  <!-- Vendor CSS Files - HIGH PRIORITY -->
-  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
   <link rel="preload" href="assets/css/style.min.css" as="style">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/css/style.min.css" rel="stylesheet">
-  <link rel="preload" href="assets/vendor/swiper/swiper-bundle.min.css" as="style">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  
-  <!-- Non-critical CSS loaded asynchronously -->
-  <link rel="preload" href="assets/vendor/glightbox/css/glightbox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript>
-  <link rel="preload" href="assets/vendor/remixicon/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet"></noscript>
 
-  <!-- Custom Styles -->
-
+  <!-- Données structurées : agence locale -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Gandiol Design",
+    "image": "https://gandioldesign.com/assets/img/logo.png",
+    "logo": "https://gandioldesign.com/assets/img/logo.png",
+    "url": "https://gandioldesign.com/",
+    "telephone": "+221785903857",
+    "email": "contact@gandioldesign.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Medina Fall",
+      "addressLocality": "Thiès",
+      "addressCountry": "SN"
+    },
+    "areaServed": "SN",
+    "sameAs": [
+      "https://www.instagram.com/gandiol_design",
+      "https://www.tiktok.com/@gandiol_design",
+      "https://www.facebook.com/share/19NPB4kFYC/"
+    ],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conception graphique" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement d'applications web et mobiles" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing digital" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Photographie" } }
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  <header id="header" class="gd-header">
+    <div class="wrap gd-header-row">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="Gandiol Design" style="height: 40px;">
+      <a href="index.html" class="gd-brand">
+        <img src="assets/img/logo.png" alt="Gandiol Design" class="gd-brand-mark">
         <span>Gandiol Design</span>
       </a>
 
-
-
-      <nav id="navbar" class="navbar">
-        <ul class="stagger-animation">
+      <nav id="navbar" class="gd-nav">
+        <ul>
           <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
           <li><a class="nav-link scrollto" href="#about">À propos</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Réalisations</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#testimonials">Témoignages</a></li> -->
           <li><a class="nav-link scrollto" href="https://wa.me/221785903857">Contact</a></li>
-          <li><a class="getstarted scrollto whatsapp-btn" href="https://wa.me/221785903857">
-              <i class="bi bi-whatsapp"></i> WhatsApp
-            </a></li>
         </ul>
-      </nav><!-- .navbar -->
+      </nav>
       <i class="bi bi-list mobile-nav-toggle"></i>
 
+      <a class="btn btn-solid gd-header-cta" href="https://wa.me/221785903857">
+        <i class="bi bi-whatsapp"></i> WhatsApp
+      </a>
+
     </div>
-  </header><!-- End Header -->
+  </header>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 class="hero-title-delayed">🎨 <span class="typewriter-text">Gandiol Design</span></h1>
-          <h2 data-aos="slide-right" data-aos-delay="300" data-aos-duration="1200" class="slogan">
-            "Transformez votre présence digitale avec des solutions simples et efficaces."
-          </h2>
-          <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
-            Agence digitale sénégalaise spécialisée en conception graphique, développement d'applications, marketing digital et photographie. Solutions complètes pour TPE/PME et entrepreneurs.
-          </p>
-          <div data-aos="zoom-in" data-aos-delay="900" data-aos-duration="800">
-            <div class="text-center text-lg-start">
-              <a href="#about"
-                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center animate-pulse">
-                <span>Découvrir nos services</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-              <a href="https://wa.me/221785903857" class="whatsapp-btn ms-3 animate-bounce">
-                <i class="bi bi-whatsapp"></i>
-                <span>Contactez-nous</span>
-              </a>
-            </div>
-          </div>
+  <!-- ======= Hero ======= -->
+  <section id="hero" class="gd-hero">
+    <div class="wrap gd-hero-grid">
+      <div>
+        <span class="eyebrow gd-eyebrow-accent">Agence créative — Thiès, Sénégal</span>
+        <h1 data-aos="fade-up">VOTRE BOUTIQUE MÉRITE UNE MARQUE <em>QU'ON REMARQUE.</em></h1>
+        <p class="gd-lede" data-aos="fade-up" data-aos-delay="100">
+          Identité visuelle, sites web, marketing digital et photographie — pensés pour les commerçants, artisans et entrepreneurs sénégalais qui n'ont pas de temps à perdre avec un prestataire de plus.
+        </p>
+        <div class="gd-ctas" data-aos="fade-up" data-aos-delay="200">
+          <a href="https://wa.me/221785903857" class="btn btn-solid">Discuter de mon projet <i class="bi bi-arrow-right"></i></a>
+          <a href="#portfolio" class="btn btn-ghost-dark scrollto">Voir nos réalisations</a>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1500">
-          <img src="assets/img/hero-img.png" class="img-fluid animated floating-animation" alt="Hero Gandiol Design" loading="eager" decoding="async">
+        <div class="gd-facts" data-aos="fade-up" data-aos-delay="300">
+          <div><b>4 ANS</b><span>D'expérience terrain</span></div>
+          <div><b>5</b><span>Métiers sous un seul toit</span></div>
+          <div><b>100%</b><span>Local, Wolof / Français</span></div>
+        </div>
+      </div>
+      <div data-aos="flip-left" data-aos-delay="200">
+        <div class="gd-proof-card">
+          <div class="gd-proof-pin">Nouveau visuel</div>
+          <div class="gd-proof-tag"><span>CLIENT · BOUTIQUE MEDINA FALL</span><em>LIVRÉ</em></div>
+          <div class="gd-swatch-row">
+            <div class="gd-swatch" style="background:var(--forest)"></div>
+            <div class="gd-swatch" style="background:var(--accent)"></div>
+            <div class="gd-swatch" style="background:var(--ink)"></div>
+            <div class="gd-swatch" style="background:var(--paper);border:1px solid #d9cfb8"></div>
+          </div>
+          <div class="gd-proof-glyph">TAILLE&nbsp;<span>&amp;</span><br>STYLE</div>
+          <div class="gd-proof-caption">Logo, carte de visite et bannière Facebook livrés en une semaine.</div>
         </div>
       </div>
     </div>
-
-  </section><!-- End Hero -->
-  
+  </section>
 
   <main id="main">
 
-    <!-- Senegal Colors Divider -->
-    <div class="senegal-colors"></div>
-
-    
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about scroll-reveal">
-
-      <div class="container" data-aos="fade-up">
-        <div class="row gx-0">
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="content">
-              <h3>📖 Présentation complète</h3>
-              <h2>Gandiol Design - Agence digitale complète</h2>
-              <p>
-                <strong>Gandiol Design</strong> est une <strong>agence digitale sénégalaise</strong> spécialisée dans la
-                <strong>création complète de solutions digitales</strong> pour les TPE/PME et entrepreneurs. Avec 4 ans d'expérience, nous proposons une gamme complète de services : conception graphique, développement d'applications, marketing digital et photographie.
-              </p>
-              <p>
-                Notre approche <strong>personnalisée</strong> et notre engagement <strong>100% local</strong> nous permettent de comprendre les vrais besoins du marché sénégalais et de proposer des solutions adaptées et abordables.
-              </p>
-
-              <div class="target-audience">
-                <h4>🎯 Notre mission</h4>
-                <p>Accompagner les entrepreneurs sénégalais dans leur <strong>transformation digitale</strong> en proposant des solutions créatives, techniques et marketing de qualité professionnelle.</p>
-              </div>
-
-              <div class="text-center text-lg-start">
-                <a href="#services"
-                  class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Découvrir nos services</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
+    <!-- ======= About ======= -->
+    <section id="about" class="gd-section gd-light">
+      <div class="wrap gd-about-grid">
+        <div data-aos="fade-up">
+          <span class="eyebrow">Présentation</span>
+          <h2>UNE AGENCE, CINQ MÉTIERS, ZÉRO INTERMÉDIAIRE.</h2>
+          <p class="gd-body-lg">
+            <strong>Gandiol Design</strong> est une agence digitale sénégalaise spécialisée dans la création complète de solutions digitales pour les TPE/PME et entrepreneurs. Avec 4 ans d'expérience, nous proposons une gamme complète de services : conception graphique, développement d'applications, marketing digital et photographie.
+          </p>
+          <p class="gd-body-lg">
+            Notre approche personnalisée et notre engagement 100% local nous permettent de comprendre les vrais besoins du marché sénégalais et de proposer des solutions adaptées et abordables.
+          </p>
+          <div class="gd-callout">
+            <span class="eyebrow">Notre mission</span>
+            <p>Accompagner les entrepreneurs sénégalais dans leur transformation digitale en proposant des solutions créatives, techniques et marketing de qualité professionnelle.</p>
           </div>
-
-          <div class="col-lg-6 d-flex align-items-center">
-            <img src="assets/img/why-us.png" class="img-fluid" alt="Équipe Gandiol Design" width="500" height="400" decoding="async" data-aos="zoom-in" data-aos-delay="100">
-          </div>
-
+          <a href="#services" class="btn btn-ghost-light scrollto">Découvrir nos services <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="100">
+          <img src="assets/img/why-us.png" alt="Équipe Gandiol Design" width="500" height="400" decoding="async" class="gd-round-photo">
         </div>
       </div>
-
-    </section><!-- End About Section -->
-
-
-      <!-- Section Services -->
-    <section id="portfolio" class="services_portfolio">
-        <div class="container">
-           <div class="text-center">
-              <h2 class="section-heading text-uppercase">Portfolio</h2>
-              <h3 class="section-subheading text-muted">Découvrez nos réalisations.</h3>
-          </div>
-            <div class="services_portfolios-grid">
-                <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/portfolio_logo_visuel.webp" alt="Design Graphique" decoding="async" width="300" height="240">
-                    <h3>Design Graphique</h3>
-                    <p>Création d'identités visuelles fortes et impactantes pour votre marque.</p>
-                </div>
-                <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/portfolio_site_web_ecommerce (1).webp" alt="Développement Web" decoding="async" width="300" height="240">
-                    <h3>Développement Web</h3>
-                    <p>Conception d'interfaces web modernes et fonctionnelles.</p>
-                </div>
-                <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/image_serigraphie.webp" alt="Sérigraphie" decoding="async" width="300" height="240">
-                    <h3>Sérigraphie</h3>
-                    <p>Communication visuelle et sérigraphie sur mesure.</p>
-                </div>
-                <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/portfolio_flyers_banners.webp" alt="Flyers & Banners" decoding="async" width="300" height="240">
-                    <h3>Flyers & Banners</h3>
-                    <p>Solutions sur-mesure pour vos supports publicitaires.</p>
-                </div>
-                <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/image_panneau_publicitaire-_1_.webp" alt="Panneaux Publicitaires" decoding="async" width="300" height="240">
-                    <h3>Panneaux Publicitaires</h3>
-                    <p>Création et installation de panneaux publicitaires impactants.</p>
-                </div>
-                <div class="services_portfolio-card">
-                    <img src="assets/img/portfolio/portfolio_carte_visite_badges.webp" alt="Cartes de Visite" decoding="async" width="300" height="240">
-                    <h3>Cartes de Visite et Badges</h3>
-                    <p>Packaging personnalisé pour valoriser votre marque.</p>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services" style="background: #f8f9fa; padding: 80px 0;">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>💼 Nos services</h2>
-          <p>Des solutions digitales complètes pour votre entreprise</p>
-        </header>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card">
-              <div class="feature-icon">
-                <i class="bi bi-palette"></i>
-              </div>
-              <h3>🎨 Conception Graphique</h3>
-              <p>Nous réalisons des designs professionnels pour tous vos supports :</p>
-              <ul class="list-unstyled service-list">
-                <li><i class="bi bi-check-circle-fill"></i> Logos et identités visuelles</li>
-                <li><i class="bi bi-check-circle-fill"></i> Affiches publicitaires, flyers, brochures</li>
-                <li><i class="bi bi-check-circle-fill"></i> Bannières réseaux sociaux</li>
-                <li><i class="bi bi-check-circle-fill"></i> Cartes de visite, badges, stickers</li>
-              </ul>
-              <p class="service-guarantee">✅ Un design soigné, unique et impactant.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card">
-              <div class="feature-icon">
-                <i class="bi bi-phone"></i>
-              </div>
-              <h3>📱 Développement d'applications</h3>
-              <p>Création d'applications web et mobiles :</p>
-              <ul class="list-unstyled service-list">
-                <li><i class="bi bi-check-circle-fill"></i> Sites vitrines et e-commerce</li>
-                <li><i class="bi bi-check-circle-fill"></i> Applications de gestion (entreprise, école, boutique)</li>
-                <li><i class="bi bi-check-circle-fill"></i> Interfaces modernes, rapides et responsives</li>
-              </ul>
-              <p class="service-guarantee">✅ Solutions adaptées à vos besoins techniques et votre budget.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-card">
-              <div class="feature-icon">
-                <i class="bi bi-megaphone"></i>
-              </div>
-              <h3>📣 Marketing Digital</h3>
-              <p>Nous boostons votre visibilité en ligne :</p>
-              <ul class="list-unstyled service-list">
-                <li><i class="bi bi-check-circle-fill"></i> Création et gestion de campagnes Facebook/Instagram</li>
-                <li><i class="bi bi-check-circle-fill"></i> Community management</li>
-                <li><i class="bi bi-check-circle-fill"></i> Création de visuels engageants</li>
-                <li><i class="bi bi-check-circle-fill"></i> Analyse et stratégie de communication</li>
-              </ul>
-              <p class="service-guarantee">✅ Objectif : augmenter vos ventes, votre notoriété et vos interactions.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-card">
-              <div class="feature-icon">
-                <i class="bi bi-instagram"></i>
-              </div>
-              <h3>📢 Boost Facebook & Instagram</h3>
-              <p>Services spécifiques pour développer vos réseaux :</p>
-              <ul class="list-unstyled service-list">
-                <li><i class="bi bi-check-circle-fill"></i> Couverture professionnelle des pages</li>
-                <li><i class="bi bi-check-circle-fill"></i> Publicités ciblées et optimisées</li>
-                <li><i class="bi bi-check-circle-fill"></i> Création de contenu viral</li>
-                <li><i class="bi bi-check-circle-fill"></i> Accompagnement en stratégie sociale</li>
-              </ul>
-              <p class="service-guarantee">✅ Devenez visible et mémorable sur les bons canaux.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-card">
-              <div class="feature-icon">
-                <i class="bi bi-camera"></i>
-              </div>
-              <h3>📷 Photographie</h3>
-              <p>Réalisation de shootings personnalisés :</p>
-              <ul class="list-unstyled service-list">
-                <li><i class="bi bi-check-circle-fill"></i> Produits, personnel, événements</li>
-                <li><i class="bi bi-check-circle-fill"></i> Retouches pro et livraison numérique</li>
-                <li><i class="bi bi-check-circle-fill"></i> Optimisation pour les réseaux ou impression</li>
-              </ul>
-              <p class="service-guarantee">✅ Mettez en valeur ce que vous offrez.</p>
-            </div>
-          </div>
-
+    <!-- ======= Portfolio / Preuves ======= -->
+    <section id="portfolio" class="gd-section gd-dark">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Nos réalisations</span>
+          <h2>CE QU'ON A LIVRÉ, PAS CE QU'ON PROMET.</h2>
+          <p>Un aperçu des supports produits pour nos clients — chaque pièce est pensée pour être utilisée immédiatement.</p>
         </div>
-
-      </div>
-
-    </section><!-- End Services Section -->
-
-    <!-- ======= Call to Action Section ======= -->
-    <section id="cta" class="cta" style="background: var(--primary-color); padding: 80px 0;">
-      <div class="container" data-aos="zoom-in">
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-start">
-            <h3 style="color: white;">Prêt à transformer votre présence digitale ?</h3>
-            <p style="color: white;">Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé.</p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="https://wa.me/221785903857" style="background: var(--secondary-color); color: white; padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: 600;">
-              <i class="bi bi-whatsapp"></i> Contactez-nous
-            </a>
-          </div>
+        <div class="gd-portfolio-grid">
+          <figure class="gd-portfolio-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/portfolio/portfolio_logo_visuel.webp" alt="Design Graphique" loading="lazy" decoding="async" width="300" height="240">
+            <figcaption><span class="idx">01</span><h3>Design Graphique</h3><p>Identités visuelles fortes et impactantes.</p></figcaption>
+          </figure>
+          <figure class="gd-portfolio-item" data-aos="fade-up" data-aos-delay="150">
+            <img src="assets/img/portfolio/portfolio_site_web_ecommerce (1).webp" alt="Développement Web" loading="lazy" decoding="async" width="300" height="240">
+            <figcaption><span class="idx">02</span><h3>Développement Web</h3><p>Interfaces web modernes et fonctionnelles.</p></figcaption>
+          </figure>
+          <figure class="gd-portfolio-item" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/portfolio/image_serigraphie.webp" alt="Sérigraphie" loading="lazy" decoding="async" width="300" height="240">
+            <figcaption><span class="idx">03</span><h3>Sérigraphie</h3><p>Communication visuelle sur mesure.</p></figcaption>
+          </figure>
+          <figure class="gd-portfolio-item" data-aos="fade-up" data-aos-delay="250">
+            <img src="assets/img/portfolio/portfolio_flyers_banners.webp" alt="Flyers & Banners" loading="lazy" decoding="async" width="300" height="240">
+            <figcaption><span class="idx">04</span><h3>Flyers &amp; Banners</h3><p>Supports publicitaires sur-mesure.</p></figcaption>
+          </figure>
+          <figure class="gd-portfolio-item" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/img/portfolio/image_panneau_publicitaire-_1_.webp" alt="Panneaux Publicitaires" loading="lazy" decoding="async" width="300" height="240">
+            <figcaption><span class="idx">05</span><h3>Panneaux Publicitaires</h3><p>Création et installation impactantes.</p></figcaption>
+          </figure>
+          <figure class="gd-portfolio-item" data-aos="fade-up" data-aos-delay="350">
+            <img src="assets/img/portfolio/portfolio_carte_visite_badges.webp" alt="Cartes de Visite" loading="lazy" decoding="async" width="300" height="240">
+            <figcaption><span class="idx">06</span><h3>Cartes de Visite &amp; Badges</h3><p>Packaging personnalisé pour votre marque.</p></figcaption>
+          </figure>
         </div>
       </div>
-    </section><!-- End Call to Action Section -->
+    </section>
 
-    <!-- ======= Target Clients Section ======= -->
-    <section id="clients" class="clients" style="padding: 80px 0;">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>👥 À qui s'adresse Gandiol Design ?</h2>
-          <p>Nous accompagnons tous les entrepreneurs et entreprises du Sénégal</p>
-        </header>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="client-item text-center p-3">
-              <i class="bi bi-shop" style="font-size: 3rem; color: var(--secondary-color);"></i>
-              <h5>Petits commerces</h5>
-              <p class="small">Boutiques, restaurants, coiffeurs</p>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="client-item text-center p-3">
-              <i class="bi bi-rocket" style="font-size: 3rem; color: var(--secondary-color);"></i>
-              <h5>Startups</h5>
-              <p class="small">Jeunes entreprises innovantes</p>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="client-item text-center p-3">
-              <i class="bi bi-tools" style="font-size: 3rem; color: var(--secondary-color);"></i>
-              <h5>Artisans locaux</h5>
-              <p class="small">Couturiers, designers, créateurs</p>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="client-item text-center p-3">
-              <i class="bi bi-person-badge" style="font-size: 3rem; color: var(--secondary-color);"></i>
-              <h5>Professionnels</h5>
-              <p class="small">Coachs, consultants, freelances</p>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="500">
-            <div class="client-item text-center p-3">
-              <i class="bi bi-building" style="font-size: 3rem; color: var(--secondary-color);"></i>
-              <h5>TPE/PME</h5>
-              <p class="small">Petites et moyennes entreprises</p>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="600">
-            <div class="client-item text-center p-3">
-              <i class="bi bi-heart" style="font-size: 3rem; color: var(--secondary-color);"></i>
-              <h5>Associations</h5>
-              <p class="small">ONG, projets sociaux</p>
-            </div>
-          </div>
-
+    <!-- ======= Services ======= -->
+    <section id="services" class="gd-section gd-light">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Nos services</span>
+          <h2>CINQ MÉTIERS, UN SEUL INTERLOCUTEUR.</h2>
+          <p>Pas besoin de coordonner un graphiste, un développeur et un community manager séparés.</p>
         </div>
 
-      </div>
+        <div class="gd-service-grid">
 
-    </section><!-- End Target Clients Section -->
-    <!-- ======= Advantages Section ======= -->
-    <section id="avantages" class="features" style="background: #f8f9fa; padding: 80px 0;">
+          <article class="gd-service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="gd-service-head"><span class="idx">01</span><i class="bi bi-palette"></i></div>
+            <h3>Conception Graphique</h3>
+            <p>Des designs professionnels pour tous vos supports :</p>
+            <ul>
+              <li>Logos et identités visuelles</li>
+              <li>Affiches, flyers, brochures</li>
+              <li>Bannières réseaux sociaux</li>
+              <li>Cartes de visite, badges, stickers</li>
+            </ul>
+            <p class="gd-service-note">Un design soigné, unique et impactant.</p>
+          </article>
 
-      <div class="container" data-aos="fade-up">
+          <article class="gd-service-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="gd-service-head"><span class="idx">02</span><i class="bi bi-phone"></i></div>
+            <h3>Développement d'applications</h3>
+            <p>Applications web et mobiles :</p>
+            <ul>
+              <li>Sites vitrines et e-commerce</li>
+              <li>Applications de gestion (entreprise, école, boutique)</li>
+              <li>Interfaces modernes, rapides et responsives</li>
+            </ul>
+            <p class="gd-service-note">Adaptées à vos besoins techniques et votre budget.</p>
+          </article>
 
-        <header class="section-header">
-          <h2>Ce qui nous distingue</h2>
-          <p>Pourquoi choisir Gandiol Design pour votre transformation digitale ?</p>
-        </header>
+          <article class="gd-service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="gd-service-head"><span class="idx">03</span><i class="bi bi-megaphone"></i></div>
+            <h3>Marketing Digital</h3>
+            <p>Boostez votre visibilité en ligne :</p>
+            <ul>
+              <li>Campagnes Facebook / Instagram</li>
+              <li>Community management</li>
+              <li>Visuels engageants</li>
+              <li>Analyse et stratégie de communication</li>
+            </ul>
+            <p class="gd-service-note">Objectif : ventes, notoriété, interactions.</p>
+          </article>
 
-        <div class="row">
+          <article class="gd-service-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="gd-service-head"><span class="idx">04</span><i class="bi bi-instagram"></i></div>
+            <h3>Boost Facebook &amp; Instagram</h3>
+            <p>Des services dédiés à vos réseaux :</p>
+            <ul>
+              <li>Couverture professionnelle des pages</li>
+              <li>Publicités ciblées et optimisées</li>
+              <li>Contenu viral</li>
+              <li>Stratégie sociale</li>
+            </ul>
+            <p class="gd-service-note">Devenez visible sur les bons canaux.</p>
+          </article>
 
-          <div class="col-lg-6">
-            <img src="assets/img/features.png" class="img-fluid" alt="Avantages Gandiol Design" loading="lazy" decoding="async">
-          </div>
+          <article class="gd-service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="gd-service-head"><span class="idx">05</span><i class="bi bi-camera"></i></div>
+            <h3>Photographie</h3>
+            <p>Shootings personnalisés :</p>
+            <ul>
+              <li>Produits, personnel, événements</li>
+              <li>Retouches pro et livraison numérique</li>
+              <li>Optimisation réseaux ou impression</li>
+            </ul>
+            <p class="gd-service-note">Mettez en valeur ce que vous offrez.</p>
+          </article>
 
-          <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
-            <div class="row align-self-center gy-4">
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-                <div class="feature-box d-flex align-items-center">
-                  <div class="">
-                    <i class="bi bi-palette" style="color: var(--secondary-color);"></i>
-                  </div>
-                  <div>
-                    <h4>Design unique</h4>
-                    <p class="small">Créations sur mesure et impactantes</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
-                <div class="feature-box d-flex align-items-center">
-                  <div class="">
-                    <i class="bi bi-person-check" style="color: var(--secondary-color);"></i>
-                  </div>
-                  <div>
-                    <h4>Approche personnalisée</h4>
-                    <p class="small">Suivi post-lancement inclus</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
-                <div class="feature-box d-flex align-items-center">
-                  <div class="">
-                    <i class="bi bi-flag" style="color: var(--secondary-color);"></i>
-                  </div>
-                  <div>
-                    <h4>100% local</h4>
-                    <p class="small">Support en wolof/français</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
-                <div class="feature-box d-flex align-items-center">
-                  <div class="">
-                    <i class="bi bi-tools" style="color: var(--secondary-color);"></i>
-                  </div>
-                  <div>
-                    <h4>Outils abordables</h4>
-                    <p class="small">Solutions adaptées aux budgets</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
-                <div class="feature-box d-flex align-items-center">
-                  <div class="">
-                    <i class="bi bi-award" style="color: var(--secondary-color);"></i>
-                  </div>
-                  <div>
-                    <h4>4 ans d'expérience</h4>
-                    <p class="small">Expertise reconnue sur le marché</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
-                <div class="feature-box d-flex align-items-center">
-                  <div class="">
-                    <i class="bi bi-layers" style="color: var(--secondary-color);"></i>
-                  </div>
-                  <div>
-                    <h4>Services complets</h4>
-                    <p class="small">De la conception à la réalisation</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
+          <article class="gd-service-card gd-service-card-accent" data-aos="fade-up" data-aos-delay="350">
+            <div class="gd-service-head"><span class="idx">Inclus</span><i class="bi bi-headset"></i></div>
+            <h3>Suivi post-lancement</h3>
+            <p>Un projet livré n'est pas un projet abandonné :</p>
+            <ul>
+              <li>Support en wolof / français</li>
+              <li>Ajustements après mise en ligne</li>
+              <li>Un seul interlocuteur, du brief à la livraison</li>
+            </ul>
+            <p class="gd-service-note">100% local, 100% suivi.</p>
+          </article>
 
         </div>
-
       </div>
+    </section>
 
-    </section><!-- End Advantages Section -->
-
-    
-
-    <!-- ======= team Section ======= -->
-    <section class="page-section bg-light" id="team">
-      <div class="container">
-          <div class="text-center">
-              <h2 class="section-heading text-uppercase">Notre Équipe</h2>
-              <h3 class="section-subheading text-muted">Rencontrez les experts derrière Gandiol Design.</h3>
-          </div>
-          <div class="row">
-              <div class="col-lg-4 mx-auto">
-                  <div class="team-member">
-                      <img class="mx-auto rounded-circle" src="assets/img/team/01.jpg" alt="Papa Issa GUENE - Fondateur Gandiol Design" loading="lazy" decoding="async" />
-                      <h4>Papa Issa GUENE</h4>
-                      <p class="text-muted">Fondateur & Développeur</p>
-                      <a href="https://www.instagram.com/gandiol_design?igsh=MWQzbjNydmczZG9law==" class="instagram"><i class="bi bi-instagram"></i></a>
-                      <a href="https://www.tiktok.com/@gandiol_design?_t=ZM-8yVjC4RjL9y&_r=1" class="tiktok"><i class="bi bi-tiktok"></i></a>
-                      <a href="https://www.facebook.com/share/19NPB4kFYC/" class="facebook"><i class="bi bi-facebook"></i></a>
-                     </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Nous sommes une équipe passionnée et dédiée à la réussite de votre projet digital.</p></div>
-          </div>
+    <!-- ======= CTA ======= -->
+    <section class="gd-cta gd-dark">
+      <div class="wrap gd-cta-row" data-aos="fade-up">
+        <div>
+          <h3>PRÊT À TRANSFORMER VOTRE PRÉSENCE DIGITALE ?</h3>
+          <p>Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis personnalisé.</p>
+        </div>
+        <a class="btn btn-solid" href="https://wa.me/221785903857"><i class="bi bi-whatsapp"></i> Contactez-nous</a>
       </div>
+    </section>
+
+    <!-- ======= Clients cibles ======= -->
+    <section id="clients" class="gd-section gd-light">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">À qui s'adresse Gandiol Design</span>
+          <h2>ON CONNAÎT VOTRE TERRAIN.</h2>
+          <p>Nous accompagnons tous les entrepreneurs et entreprises du Sénégal.</p>
+        </div>
+        <div class="gd-persona-grid">
+          <div class="gd-persona" data-aos="zoom-in" data-aos-delay="100"><span class="idx">01</span><i class="bi bi-shop"></i><h3>Petits commerces</h3><p>Boutiques, restaurants, coiffeurs</p></div>
+          <div class="gd-persona" data-aos="zoom-in" data-aos-delay="150"><span class="idx">02</span><i class="bi bi-rocket"></i><h3>Startups</h3><p>Jeunes entreprises innovantes</p></div>
+          <div class="gd-persona" data-aos="zoom-in" data-aos-delay="200"><span class="idx">03</span><i class="bi bi-tools"></i><h3>Artisans locaux</h3><p>Couturiers, designers, créateurs</p></div>
+          <div class="gd-persona" data-aos="zoom-in" data-aos-delay="250"><span class="idx">04</span><i class="bi bi-person-badge"></i><h3>Professionnels</h3><p>Coachs, consultants, freelances</p></div>
+          <div class="gd-persona" data-aos="zoom-in" data-aos-delay="300"><span class="idx">05</span><i class="bi bi-building"></i><h3>TPE / PME</h3><p>Petites et moyennes entreprises</p></div>
+          <div class="gd-persona" data-aos="zoom-in" data-aos-delay="350"><span class="idx">06</span><i class="bi bi-heart"></i><h3>Associations</h3><p>ONG, projets sociaux</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Ce qui nous distingue ======= -->
+    <section id="avantages" class="gd-section gd-dark">
+      <div class="wrap gd-features-grid">
+        <div data-aos="fade-up">
+          <span class="eyebrow">Ce qui nous distingue</span>
+          <h2>POURQUOI GANDIOL DESIGN ?</h2>
+          <p class="gd-body-lg">Six raisons pour lesquelles nos clients reviennent — et nous recommandent.</p>
+        </div>
+        <div class="gd-feature-list">
+          <div class="gd-feature" data-aos="fade-up" data-aos-delay="100"><i class="bi bi-palette"></i><div><h4>Design unique</h4><p>Créations sur mesure et impactantes</p></div></div>
+          <div class="gd-feature" data-aos="fade-up" data-aos-delay="150"><i class="bi bi-person-check"></i><div><h4>Approche personnalisée</h4><p>Suivi post-lancement inclus</p></div></div>
+          <div class="gd-feature" data-aos="fade-up" data-aos-delay="200"><i class="bi bi-flag"></i><div><h4>100% local</h4><p>Support en wolof / français</p></div></div>
+          <div class="gd-feature" data-aos="fade-up" data-aos-delay="250"><i class="bi bi-tools"></i><div><h4>Outils abordables</h4><p>Solutions adaptées aux budgets</p></div></div>
+          <div class="gd-feature" data-aos="fade-up" data-aos-delay="300"><i class="bi bi-award"></i><div><h4>4 ans d'expérience</h4><p>Expertise reconnue sur le marché</p></div></div>
+          <div class="gd-feature" data-aos="fade-up" data-aos-delay="350"><i class="bi bi-layers"></i><div><h4>Services complets</h4><p>De la conception à la réalisation</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Équipe ======= -->
+    <section id="team" class="gd-section gd-light">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Notre équipe</span>
+          <h2>RENCONTREZ GANDIOL DESIGN.</h2>
+        </div>
+        <div class="gd-team-card" data-aos="fade-up">
+          <img src="assets/img/team/01.jpg" alt="Papa Issa GUENE - Fondateur Gandiol Design" loading="lazy" decoding="async">
+          <div>
+            <h3>Papa Issa GUENE</h3>
+            <span class="eyebrow">Fondateur &amp; Développeur</span>
+            <p>Une équipe passionnée et dédiée à la réussite de votre projet digital.</p>
+            <div class="gd-social-row">
+              <a href="https://www.instagram.com/gandiol_design?igsh=MWQzbjNydmczZG9law==" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.tiktok.com/@gandiol_design?_t=ZM-8yVjC4RjL9y&_r=1" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+              <a href="https://www.facebook.com/share/19NPB4kFYC/" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Closing CTA + Footer ======= -->
+  <section class="gd-closing gd-dark">
+    <div class="wrap">
+      <span class="eyebrow">Prêt quand vous l'êtes</span>
+      <h2>ARRÊTEZ DE BRICOLER VOTRE IMAGE.</h2>
+      <div class="gd-ctas gd-ctas-center">
+        <a class="btn btn-solid" href="https://wa.me/221785903857">Écrire sur WhatsApp <i class="bi bi-arrow-right"></i></a>
+        <a class="btn btn-ghost-dark scrollto" href="#services">Revoir les services</a>
+      </div>
+    </div>
   </section>
 
-
-    <!-- ======= Contact Section ======= -->
-    <!-- <section id="contact" class="contact" style="background: #4154f1; color: white; padding: 80px 0;">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header text-center">
-          <h2 style="color: white;">📞 Contactez-nous</h2>
-          <p style="color: #fcd116;">Prêt à digitaliser votre entreprise ? Parlons-en !</p>
-        </header>
-
-        <div class="row gy-4 justify-content-center">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="info-item d-flex align-items-center text-center flex-column">
-              <i class="bi bi-whatsapp" style="font-size: 3rem; color: #25d366; margin-bottom: 15px;"></i>
-              <div>
-                <h3 style="color: white;">WhatsApp</h3>
-                <p>+221 [Votre numéro]</p>
-                <a href="https://wa.me/221XXXXXXXXX" class="whatsapp-btn">
-                  <i class="bi bi-whatsapp"></i>
-                  Démarrer une conversation
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="info-item d-flex align-items-center text-center flex-column">
-              <i class="bi bi-envelope" style="font-size: 3rem; color: #fcd116; margin-bottom: 15px;"></i>
-              <div>
-                <h3 style="color: white;">Email</h3>
-                <p>contact@gandiolxarala.sn</p>
-                <a href="mailto:contact@gandiolxarala.sn" class="btn btn-outline-light">
-                  <i class="bi bi-envelope"></i>
-                  Envoyer un email
-                </a>
-              </div>
-            </div>
-          </div>
-
+  <footer id="footer" class="gd-footer">
+    <div class="wrap gd-footer-grid">
+      <div class="gd-footer-brand">
+        <a href="index.html" class="gd-brand">
+          <img src="assets/img/logo.png" alt="Gandiol Design" class="gd-brand-mark">
+          <span>Gandiol Design</span>
+        </a>
+        <p>Agence digitale sénégalaise spécialisée en conception graphique, développement d'applications, marketing digital et photographie.</p>
+        <div class="gd-social-row">
+          <a href="https://www.instagram.com/gandiol_design?igsh=MWQzbjNydmczZG9law==" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.tiktok.com/@gandiol_design?_t=ZM-8yVjC4RjL9y&_r=1" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="https://www.facebook.com/share/19NPB4kFYC/" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
         </div>
-
-        <div class="row mt-5">
-          <div class="col-12 text-center">
-            <h4 style="color: white; margin-bottom: 20px;">Suivez-nous sur les réseaux sociaux</h4>
-            <div class="social-links">
-              <a href="#" class="btn btn-outline-light me-3">
-                <i class="bi bi-instagram"></i> @gandiolxarala
-              </a>
-              <a href="#" class="btn btn-outline-light me-3">
-                <i class="bi bi-tiktok"></i> @gandiolxarala
-              </a>
-              <a href="#" class="btn btn-outline-light">
-                <i class="bi bi-facebook"></i> @gandiolxarala
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-    </section> -->
+      <div class="gd-footer-links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="#hero" class="scrollto">Accueil</a></li>
+          <li><a href="#about" class="scrollto">À propos</a></li>
+          <li><a href="#services" class="scrollto">Services</a></li>
+          <li><a href="https://wa.me/221785903857">Contact</a></li>
+        </ul>
+      </div>
 
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer" style="background: #2c3e50;">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-info">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <img src="assets/img/logo.png" alt="" style="height: 40px;">
-              <span>Gandiol Design</span>
-            </a>
-            <p class="slogan">"Agence digitale sénégalaise spécialisée en conception graphique, 
-              développement d'applications, marketing digital et photographie. Solutions complètes 
-              pour TPE/PME et entrepreneurs..</p>
-            <div class="social-links mt-3">
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="tiktok"><i class="bi bi-tiktok"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6 footer-links">
-            <h4>Liens utiles</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#hero">Accueil</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#about">À propos</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#services">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="https://wa.me/221785903857">Contact</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact</h4>
-            <p>
-              Medina Fall, Thies du Sénégal<br><br>
-              <strong>WhatsApp:</strong> +221 78 590 38 57<br>
-              <strong>Telephone:</strong>+221 76 752 37 09<br>
-
-              <strong>Email:</strong> contact@gandioldesign.com<br>
-            </p>
-
-          </div>
-
-        </div>
+      <div class="gd-footer-contact">
+        <h4>Contact</h4>
+        <p>
+          Medina Fall, Thiès, Sénégal<br><br>
+          <strong>WhatsApp :</strong> +221 78 590 38 57<br>
+          <strong>Téléphone :</strong> +221 76 752 37 09<br>
+          <strong>Email :</strong> contact@gandioldesign.com
+        </p>
       </div>
     </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Gandiol Design</span></strong>. Tous droits réservés
-      </div>
+    <div class="wrap gd-footer-copyright">
+      &copy; Copyright <strong>Gandiol Design</strong>. Tous droits réservés
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/221785903857" class="whatsapp-float"
-    style="position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 100; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+  <a href="https://wa.me/221785903857" class="whatsapp-float" aria-label="Contacter sur WhatsApp">
     <i class="bi bi-whatsapp"></i>
   </a>
 
-  <!-- Vendor JS Files - deferred for better performance -->
-  <script defer src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script defer src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script defer src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script defer src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script defer src="assets/vendor/php-email-form/validate.js"></script>
-
   <!-- Image Optimization Script -->
   <script defer src="assets/js/image-optimizer.js"></script>
-
-  <!-- Font Swap Script -->
-  <script>
-    // Apply Google Fonts once ready, but keep system fonts visible always
-    if ('fonts' in document) {
-      document.fonts.ready.then(() => {
-        document.body.style.fontFamily = '"Open Sans", system-ui, -apple-system, sans-serif';
-        document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
-          el.style.fontFamily = '"Montserrat", system-ui, -apple-system, sans-serif';
-        });
-      }).catch(() => {
-        // If fonts fail, system fonts are already visible
-        console.log('Google Fonts failed to load');
-      });
-    }
-  </script>
 
   <!-- Template Main JS File -->
   <script defer src="assets/js/main.js"></script>
